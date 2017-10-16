@@ -1,30 +1,47 @@
 <template>
-  <div class="sideBar">
-        <el-menu default-active="2" router  class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" @select="handleClick">
-          <el-submenu index="/testExample">
-            <template slot="title"><i class="el-icon-message"></i>测试用例</template>
-              <el-menu-item index="/serverApply">服务应用</el-menu-item>
-              <el-menu-item index="/testResult">测试结果</el-menu-item>
-          </el-submenu>
-          <el-menu-item index="/testRequest" ><i class="el-icon-menu"></i>测试请求</el-menu-item>
-          <el-menu-item index="/exampleAnalyse"><i class="el-icon-setting"></i>样例分析</el-menu-item>
-        </el-menu>
+  <div class="sideBar col-xs-12">
+    <el-menu :default-active="activeIndex2" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+      <el-submenu index="1">
+        <template slot="title">全部图书分类</template>
+        <el-menu-item index="1-1">计算机图书</el-menu-item>
+        <el-menu-item index="1-2">工业技术图书</el-menu-item>
+        <el-menu-item index="1-3">数理化图书</el-menu-item>
+        <el-menu-item index="1-3">经济管理图书</el-menu-item>
+        <el-menu-item index="1-3">人文社科图书</el-menu-item>
+        <el-menu-item index="1-3">考试图书</el-menu-item>
+      </el-submenu>
+      <el-menu-item index="2">
+        <a href="https://www.ele.me" target="_blank">首页</a>
+      </el-menu-item>
+      <el-menu-item index="3">
+        <a href="https://www.ele.me" target="_blank">个人中心</a>
+      </el-menu-item>
+      <el-menu-item index="4">
+        <a href="https://www.ele.me" target="_blank">书评社区</a>
+      </el-menu-item>
+      <el-menu-item index="5">
+        <a href="https://www.ele.me" target="_blank">联系我们</a>
+      </el-menu-item>
+    </el-menu>
   </div>
 </template>
 
 <script>
 
 export default {
-  name:'sideBar',
+  name: 'sideBar',
   methods: {
-    handleOpen (key, keyPath) {
+    handleOpen(key, keyPath) {
       console.log(key, keyPath)
     },
-    handleClose (key, keyPath) {
+    handleClose(key, keyPath) {
       console.log(key, keyPath)
     },
-    handleClick:function(key,keyPath){
-       console.log(key, keyPath)
+    handleClick: function(key, keyPath) {
+      console.log(key, keyPath)
+    },
+    handleSelect(key, keyPath) {
+      console.log(key, keyPath);
     }
   }
 }
@@ -32,10 +49,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
- .sideBar{
-    width:170px;
-    height:100%;
-    background:#eef1f6;
-    float:left;
-  }
+a {
+  text-decoration: none;
+}
+
+.el-menu {
+  background-color: #fff;
+}
 </style>

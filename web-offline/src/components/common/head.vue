@@ -1,19 +1,15 @@
-<template>
-  <div class = "head">
-        <div class = "logo">
-          <img src="../../assets/logo.png" style="width:40px;height:40px;">
-          <span class="titleDes">测试管理平台</span>
+<template class="home-template">
+  <header class="main-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h1>
+            <span class="hide">shuping - </span>为有主见的你创造的书评网。
+          </h1>
         </div>
-        <div class="elMenu">
-          <el-menu theme="dark" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-              <el-submenu index="1">
-                <template slot="title">退出登录</template>
-                <el-menu-item index="1-1">Help</el-menu-item>
-                <el-menu-item index="1-2">Login out</el-menu-item>
-              </el-submenu>
-          </el-menu>
-        </div>
-  </div>
+      </div>
+    </div>
+  </header>
 </template>
 
 <script>
@@ -21,7 +17,7 @@
 export default {
   name: 'head',
   methods: {
-    handleSelect (key, keyPath) {
+    handleSelect(key, keyPath) {
       console.log(key, keyPath)
     }
   }
@@ -30,10 +26,25 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .logo{
-    position: absolute;
-    top: 10px;
-    left: 30px;
-    z-index: 99999999;
-  }
+
+.home-template .main-header {
+    padding-top: 62px;
+    padding-bottom: 62px;
+    background-repeat: no-repeat;
+    background-position: center 20%;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+.main-header {
+    text-align: center;
+    padding: 42px 0;
+    background: #f4645f;
+}
+.main-header h1 {
+    color: #fff;
+}
+h1 {
+    font-size: 3em;
+}
+
 </style>

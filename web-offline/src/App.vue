@@ -1,9 +1,8 @@
 <template>
   <div id="app">
       <Head></Head>
-      <SideBar></SideBar>
+      <NavBar></NavBar>
       <div class="content">
-         <BreadCrumb></BreadCrumb>
          <router-view></router-view>
       </div>
   </div>
@@ -11,7 +10,7 @@
 
 <script>
 import Head from './components/common/head'
-import SideBar from './components/common/sideBar'
+import NavBar from './components/common/sideBar'
 import BreadCrumb from './components/common/breadCrumb'
 
 export default {
@@ -27,7 +26,7 @@ export default {
   },
   components: {
     Head,
-    SideBar,
+    NavBar,
     BreadCrumb
   }
 
@@ -41,7 +40,13 @@ body{
   height: 100%;
   width: 100%;
 }
-html,body,#app {height: 100%;}
+body, html {
+    color: #505050;
+    line-height: 1.75em;
+    background: #ebebeb;
+    position: relative;
+    font-family: "Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","WenQuanYi Micro Hei","Microsoft YaHei UI","Microsoft YaHei",sans-serif;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -53,24 +58,5 @@ html,body,#app {height: 100%;}
   width: 100%;
   height: 100%;
 }
-.el-menu--horizontal .el-submenu{
-    float: right
-  }
-  .el-menu--horizontal .el-submenu>.el-menu{
-    border:0px;
-  }
-  .el-submenu .el-menu-item{
-      min-width:0px;
-  }
-  .titleDes{
-    color: #fff;
-    font-size: 20px;
-    float: right;
-    margin: 10px;
-  }
-  .content{
-    height: 100%;
-    width: calc(100% - 170px);
-    float: right;
-  }
+
 </style>
