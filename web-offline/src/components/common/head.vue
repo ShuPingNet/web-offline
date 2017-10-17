@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-xs-12">
           <h1>
-            <span class="hide">shuping - </span>为有主见的你创造的书评网。
+            <span class="hide">shuping - </span>为有思想的你创造的书评网。
           </h1>
         </div>
       </div>

@@ -1,12 +1,23 @@
 <template>
-  <div class="breadCrumb">
-    <el-breadcrumb class="levelBar" separator="/">
-      <el-breadcrumb-item v-for="(item,index) in levelList" :key="item.path">
-        <span v-if='item.redirect === "noredirect" || index == levelList.length-1' class="no-redirect">{{item.name}}</span>
-        <router-link v-else :to="item.redirect || item.path">{{item.name}}</router-link>
-      </el-breadcrumb-item>
-    </el-breadcrumb>
-  </div>
+  <aside class="col-md-4 sidebar">
+    <div class="widget">
+      <h4 class="title">社区</h4>
+      <div class="content community">
+        <p>QQ群：462694081</p>
+        <p>
+          <a href="http://wenda.golaravel.com/" title="Laravel中文网问答社区" target="_blank" onclick="_hmt.push(['_trackEvent', 'big-button', 'click', '问答社区'])">
+            <i class="fa fa-comments"></i> 问答社区</a>
+        </p>
+      </div>
+    </div>
+    <div class="widget">
+      <h4 class="title">下载</h4>
+      <div class="content download">
+        <a href="/download/" class="btn btn-default btn-block" onclick="_hmt.push(['_trackEvent', 'big-button', 'click', '下载 Laravel &amp; Lumen'])">Laravel &amp; Lumen 一键安装包下载</a>
+      </div>
+    </div>
+
+  </aside>
 </template>
 
 <script>
@@ -45,6 +56,10 @@ export default {
 a {
   text-decoration: none;
 }
+.sidebar{
+  margin-right: 10%;
+}
+
 .breadCrumb {
   display: inline-block;
   width: 100%;
@@ -55,5 +70,28 @@ a {
 .el-breadcrumb {
   line-height: 30px;
   margin-left: 10px;
+}
+.sidebar .widget {
+    background: #fff;
+    padding: 21px 30px;
+}
+.widget {
+    margin-bottom: 35px;
+}
+.widget .title {
+    margin-top: 0;
+    padding-bottom: 7px;
+    border-bottom: 1px solid #ebebeb;
+    margin-bottom: 21px;
+    position: relative;
+}
+.widget .title:after {
+    content: "";
+    width: 90px;
+    height: 1px;
+    background: #f4645f;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
 }
 </style>

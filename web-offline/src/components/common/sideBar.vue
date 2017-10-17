@@ -1,8 +1,8 @@
 <template>
   <div class="sideBar col-xs-12">
     <el-menu :default-active="activeIndex2" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-      <el-submenu index="1">
-        <template slot="title">全部图书分类</template>
+      <el-submenu index="1" style="margin-left:20%">
+        <template slot="title" >全部图书分类</template>
         <el-menu-item index="1-1">计算机图书</el-menu-item>
         <el-menu-item index="1-2">工业技术图书</el-menu-item>
         <el-menu-item index="1-3">数理化图书</el-menu-item>
@@ -55,5 +55,8 @@ a {
 
 .el-menu {
   background-color: #fff;
+}
+.sideBar{
+  margin-bottom: 35px;
 }
 </style>
