@@ -1,9 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/hello/Hello'
-import TestRequest from '@/components/testRequest/testRequest'
-import ExampleAnalyse from '@/components/exampleAnalyse/exampleAnalyse'
-
+import index from '@/components/index/index'
 Vue.use(Router)
 
 export default new Router({
@@ -12,24 +9,14 @@ export default new Router({
     {
       path: '/',
       name: '首页',
-      component: Hello,
-      redirect:'/hello',
+      component: index,
+      redirect:'/index',
       children:[
         {
-          path:"hello",
-          component:Hello
+          path:"index",
+          component:index
         }
       ]
-    },
-    {
-      path: '/TestRequest',
-      name: '测试请求',
-      component: TestRequest
-    },
-    {
-      path: '/ExampleAnalyse',
-      name: '样例分析',
-      component: ExampleAnalyse
     }
   ]
 })
