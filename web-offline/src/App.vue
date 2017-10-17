@@ -1,10 +1,7 @@
 <template>
   <div id="app">
     <Head></Head>
-    <div id="bd" class="row">
-      <Content></Content>
-      <RightSideBar></RightSideBar>
-    </div>
+    <router-view></router-view>
     <Footer></Footer>
   </div>
 </template>
@@ -12,9 +9,8 @@
 <script>
 import Head from './components/common/head'
 import NavBar from './components/common/navBar'
-import RightSideBar from './components/common/rightSideBar'
-import Content from './components/common/content'
 import Footer from './components/common/footer'
+
 export default {
   name: 'app',
   methods: {
@@ -29,9 +25,8 @@ export default {
   components: {
     Head,
     NavBar,
-    RightSideBar,
-    Content,
     Footer
+
   }
 
 }
