@@ -25,12 +25,11 @@
         </form>
       </div>
       <div class="menu">
-        <a href="/channel/1/" target="_blank" class="cur">悦读</a>
-        <a href="/channel/2/" target="_blank">情感</a>
-        <a href="/channel/3/" target="_blank">连播</a>
-        <a href="/channel/4/" target="_blank">校园</a>
-        <a href="/channel/5/" target="_blank">音乐</a>
-        <a href="/channel/6/" target="_blank">Labs</a>
+        <a href="/channel/1/" target="_blank" class="cur">短评</a>
+        <a href="/channel/2/" target="_blank">读书</a>
+        <a href="/channel/3/" target="_blank">精选</a>
+        <a href="/channel/4/" target="_blank">实验室</a>
+        <a href="/channel/5/" target="_blank">我的</a>
       </div>
       <!-- 弹出登录和注册框 -->
       <div class="pop" id="login" v-show="isShowLogin">
