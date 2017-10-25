@@ -25,10 +25,10 @@
         </form>
       </div>
       <div class="menu">
-        <a href="/channel/1/" target="_blank" class="cur">短评</a>
+        <a href="/channel/1/" target="_blank"  class="cur">短评</a>
         <a href="/channel/2/" target="_blank">读书</a>
         <a href="/channel/3/" target="_blank">精选</a>
-        <a href="/channel/4/" target="_blank">实验室</a>
+        <a href="/mooddetail" target="_blank">心情</a>
         <a href="/channel/5/" target="_blank">我的</a>
       </div>
       <!-- 弹出登录和注册框 -->
