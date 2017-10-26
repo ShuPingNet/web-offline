@@ -24,7 +24,7 @@
           </button>
         </form>
       </div>
-      <div class="menu">
+      <div class="menu" @click="titleClick" >
         <a href="/channel/1/" target="_blank"  class="cur">短评</a>
         <a href="/channel/2/" target="_blank">读书</a>
         <a href="/channel/3/" target="_blank">精选</a>
@@ -98,6 +98,9 @@ export default {
     }
   },
   methods: {
+    titleClick(){
+     
+    },
     showLogin() {
       this.isShowLogin = !this.isShowLogin
     },
