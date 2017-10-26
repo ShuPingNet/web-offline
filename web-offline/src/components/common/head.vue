@@ -99,7 +99,7 @@ export default {
   },
   methods: {
     titleClick(){
-     
+      //alert($(".cur").html());
     },
     showLogin() {
       this.isShowLogin = !this.isShowLogin
