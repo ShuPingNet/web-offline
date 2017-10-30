@@ -6,7 +6,7 @@ import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 import store from './store/index'
-import jquery from 'jquery'
+import $ from 'jquery'
 
 Vue.use(ElementUI)
 Vue.config.productionTip = false

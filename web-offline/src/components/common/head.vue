@@ -103,31 +103,31 @@ export default {
           {
             name: "短评",
             target: "_self",
-            href: "/index",
+            href:"#",
             index: 0
           },
           {
             name: "读书",
             target: "_self",
-            href: "/mooddetail",
+            href:"/mooddetail",
             index: 1
           },
           {
             name: "精选",
             target: "_self",
-            href: "/mooddetail",
+            href:"/mooddetail",
             index: 2
           },
           {
             name: "心情",
             target: "_self",
-            href: "/mooddetail",
+            href:"/mooddetail",
             index: 3
           },
           {
             name: "我的",
             target: "_self",
-            href: "/mooddetail",
+            href:"/mooddetail",
             index: 4
           }
         ],
@@ -135,15 +135,10 @@ export default {
       }
     };
   },
-  created: function() {
-    alert(this.$store.getters.headIndex)
-    this.$data.menuData.activeIndex = this.$store.state.head.headIndex;
-  },
   methods: {
-    titleSelect: function(selectIndex) {
-      //alert(selectIndex);
-      // this.menuData.activeIndex=selectIndex;
-      this.$store.commit("change", selectIndex);
+    titleSelect:function(selectIndex) {
+       //alert(selectIndex);
+       this.menuData.activeIndex=selectIndex; 
     },
     showLogin() {
       this.isShowLogin = !this.isShowLogin;
