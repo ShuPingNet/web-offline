@@ -24,13 +24,16 @@
           </button>
         </form>
       </div>
-      <div class="menu">
-        <a href="/channel/1/" target="_blank" class="cur">悦读</a>
-        <a href="/channel/2/" target="_blank">情感</a>
-        <a href="/channel/3/" target="_blank">连播</a>
-        <a href="/channel/4/" target="_blank">校园</a>
-        <a href="/channel/5/" target="_blank">音乐</a>
-        <a href="/channel/6/" target="_blank">Labs</a>
+      <div class="menu" >
+       <a v-for="menuItem in menuData.menuList"  :href="menuItem.href" 
+       :target="menuItem.target"  
+       :class="{cur:menuItem.index==menuData.activeIndex}"
+       @click="titleSelect(menuItem.index)">{{menuItem.name}}</a>
+        <!-- <a href="/channel/1/" target="_blank"  class="cur">短评</a>
+        <a href="/channel/2/" target="_blank">读书</a>
+        <a href="/channel/3/" target="_blank">精选</a>
+        <a href="/mooddetail" target="_blank">心情</a>
+        <a href="/channel/5/" target="_blank">我的</a> -->
       </div>
       <!-- 弹出登录和注册框 -->
       <div class="pop" id="login" v-show="isShowLogin">
@@ -89,30 +92,73 @@
 </template>
 
 <script>
-
 export default {
-  name: 'head',
+  name: "head",
   data() {
     return {
       isShowLogin: false,
-      isShowRegister:false
-    }
+      isShowRegister: false,
+      menuData: {
+        menuList: [
+          {
+            name: "短评",
+            target: "_self",
+            href: "/index",
+            index: 0
+          },
+          {
+            name: "读书",
+            target: "_self",
+            href: "/mooddetail",
+            index: 1
+          },
+          {
+            name: "精选",
+            target: "_self",
+            href: "/mooddetail",
+            index: 2
+          },
+          {
+            name: "心情",
+            target: "_self",
+            href: "/mooddetail",
+            index: 3
+          },
+          {
+            name: "我的",
+            target: "_self",
+            href: "/mooddetail",
+            index: 4
+          }
+        ],
+        activeIndex: 0
+      }
+    };
+  },
+  created: function() {
+    alert(this.$store.getters.headIndex)
+    this.$data.menuData.activeIndex = this.$store.state.head.headIndex;
   },
   methods: {
+    titleSelect: function(selectIndex) {
+      //alert(selectIndex);
+      // this.menuData.activeIndex=selectIndex;
+      this.$store.commit("change", selectIndex);
+    },
     showLogin() {
-      this.isShowLogin = !this.isShowLogin
+      this.isShowLogin = !this.isShowLogin;
     },
     closeLogin() {
-      this.isShowLogin = !this.isShowLogin
+      this.isShowLogin = !this.isShowLogin;
     },
-    showRegister(){
-      this.isShowRegister = !this.isShowRegister
+    showRegister() {
+      this.isShowRegister = !this.isShowRegister;
     },
-    closeRegister(){
-      this.isShowRegister = !this.isShowRegister
+    closeRegister() {
+      this.isShowRegister = !this.isShowRegister;
     }
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -120,7 +166,7 @@ export default {
 #hd {
   width: 100%;
   height: 100px;
-  background: #FFF;
+  background: #fff;
 }
 
 .hd-wp {
@@ -141,7 +187,7 @@ export default {
 }
 
 .logo a:hover {
-  color: #F30;
+  color: #f30;
 }
 
 .mlogo {
@@ -186,11 +232,11 @@ export default {
 }
 
 .menu a.cur {
-  color: #F30;
+  color: #f30;
 }
 
 .mine {
-  border-left: 1px dotted #CCC;
+  border-left: 1px dotted #ccc;
   height: 20px;
   line-height: 20px;
   margin: 5px 0 5px 20px;
@@ -212,7 +258,7 @@ export default {
 
 .log-user {
   background-position: 0 -112px;
-  background-color: #FFF;
+  background-color: #fff;
   display: inline-block;
   width: 6px;
   height: 4px;
@@ -224,8 +270,8 @@ export default {
   position: absolute;
   top: 30px;
   right: 0;
-  background: #FFF;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, .1);
+  background: #fff;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
   width: 75px;
   z-index: 2;
 }
@@ -236,9 +282,9 @@ export default {
   right: 15px;
   display: inline-block;
   border-right: 8px solid transparent;
-  border-bottom: 8px solid #F5F5F5;
+  border-bottom: 8px solid #f5f5f5;
   border-left: 8px solid transparent;
-  content: '';
+  content: "";
 }
 
 .user-menu:after {
@@ -247,9 +293,9 @@ export default {
   right: 16px;
   display: inline-block;
   border-right: 7px solid transparent;
-  border-bottom: 7px solid #FFF;
+  border-bottom: 7px solid #fff;
   border-left: 7px solid transparent;
-  content: '';
+  content: "";
 }
 
 .user-menu a {
@@ -259,11 +305,11 @@ export default {
 }
 
 .user-menu a:hover {
-  background: #F5F5F5;
+  background: #f5f5f5;
 }
 
 .search {
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, .05);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
   height: 20px;
   overflow: hidden;
   width: 150px;
@@ -283,7 +329,7 @@ export default {
 .sbtn {
   width: 20px;
   height: 20px;
-  background-color: #FFF;
+  background-color: #fff;
   cursor: pointer;
   color: #999;
 }
@@ -298,12 +344,12 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, .5);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 999;
 }
 
 .pop-wp {
-  background: #FFF;
+  background: #fff;
   padding: 30px 50px 50px;
   width: 280px;
   position: absolute;
@@ -330,14 +376,14 @@ export default {
   line-height: 30px;
   text-align: center;
   background: #444;
-  color: #CCC;
+  color: #ccc;
   font-size: 24px;
   border-radius: 50%;
 }
 
 .pop-close:hover {
   background: #000;
-  color: #FFF;
+  color: #fff;
 }
 
 .account-form {
@@ -364,15 +410,15 @@ export default {
 }
 
 .account-other .error-tip .error {
-  top: 5px!important;
-  left: 12px!important;
+  top: 5px !important;
+  left: 12px !important;
 }
 
 .account-btn {
   width: 100%;
   height: 45px;
   background: #eb4235;
-  color: #FFF;
+  color: #fff;
   text-align: center;
   cursor: pointer;
   font-size: 14px;
@@ -391,8 +437,8 @@ export default {
   top: -5px;
   left: 0;
   padding: 2px 8px;
-  background: rgba(238, 80, 68, .8);
-  color: #FFF;
+  background: rgba(238, 80, 68, 0.8);
+  color: #fff;
   border-radius: 3px;
   display: block;
 }
@@ -403,9 +449,9 @@ export default {
   left: 8px;
   display: inline-block;
   border-right: 5px solid transparent;
-  border-bottom: 5px solid rgba(238, 80, 69, .8);
+  border-bottom: 5px solid rgba(238, 80, 69, 0.8);
   border-left: 5px solid transparent;
-  content: '';
+  content: "";
 }
 
 .reg-success h3 {
@@ -423,7 +469,7 @@ export default {
   vertical-align: 0px;
   border: 0;
   border-radius: 0;
-  background: #FFF;
+  background: #fff;
   color: #ee5044;
   cursor: pointer;
 }

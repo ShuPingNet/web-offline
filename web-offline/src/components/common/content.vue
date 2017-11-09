@@ -17,7 +17,7 @@
             <span>
               <i class="fa fa-clock-o"></i> 5:59</span>
             <span>
-              <i class="fa fa-headphones"></i> 6216次</span>
+              <i class="fa fa-headphones"></i> 123234234234236216次</span>
           </div>
           <div class="channel-desc">你也许不会相信，我常常想象你是多么美好，多么可爱，但实际见了你面的时候，你比我想象的要美好的多，可爱的多...</div>
         </div>
