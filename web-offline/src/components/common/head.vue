@@ -25,8 +25,8 @@
         </form>
       </div>
       <div class="menu" >
-       <a v-for="menuItem in menuData.menuList"  :href="menuItem.href" 
-       :target="menuItem.target"  
+       <a v-for="menuItem in menuData.menuList"  :href="menuItem.href"
+       :target="menuItem.target"
        :class="{cur:menuItem.index==menuData.activeIndex}"
        @click="titleSelect(menuItem.index)">{{menuItem.name}}</a>
         <!-- <a href="/channel/1/" target="_blank"  class="cur">短评</a>
@@ -136,8 +136,8 @@ export default {
     };
   },
   created: function() {
-    alert(this.$store.getters.headIndex)
-    this.$data.menuData.activeIndex = this.$store.state.head.headIndex;
+   // alert(this.$store.getters.headIndex)
+   // this.$data.menuData.activeIndex = this.$store.state.head.headIndex;
   },
   methods: {
     titleSelect: function(selectIndex) {
