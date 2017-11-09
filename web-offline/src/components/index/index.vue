@@ -15,18 +15,10 @@ export default {
     }
   },
   methods: {
-    handleEdit(index, row) {
-      console.log(index, row);
-    },
-    handleDelete(index, row) {
-      console.log(index, row);
-    }
+
   },
   created() {
-    fnGetHelloData().then(data => {
-      console.log(data.data)
-      this.tableData = data.data
-    })
+
   },
    components: {
     RightSideBar,

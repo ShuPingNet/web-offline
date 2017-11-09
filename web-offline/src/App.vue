@@ -1,15 +1,15 @@
 <template>
   <div id="app">
-    <Head></Head>
+    <WebHead></WebHead>
     <router-view></router-view>
-    <Footer></Footer>
+    <WebFooter></WebFooter>
   </div>
 </template>
 
 <script>
-import Head from './components/common/head'
+import WebHead from './components/common/head'
 import NavBar from './components/common/navBar'
-import Footer from './components/common/footer'
+import WebFooter from './components/common/footer'
 
 export default {
   name: 'app',
@@ -23,10 +23,9 @@ export default {
 
   },
   components: {
-    Head,
+    WebHead,
     NavBar,
-    Footer
-
+    WebFooter
   }
 
 }
