@@ -1,13 +1,13 @@
 <template>
   <div id="bd" class="row">
-    <Content></Content>
+    <MainContent></MainContent>
     <RightSideBar></RightSideBar>
   </div>
 </template>
 <script>
 import fnGetHelloData from './getHelloData'
 import RightSideBar from '../common/rightSideBar'
-import Content from '../common/content'
+import MainContent from '../common/content'
 export default {
   data() {
     return {
@@ -22,7 +22,7 @@ export default {
   },
    components: {
     RightSideBar,
-    Content
+    MainContent
   }
 }
 </script>
